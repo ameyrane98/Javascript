@@ -1,5 +1,5 @@
 # Javascript
-
+Hello, Welcome to my first JS project. Here are some rules to play the pig game.
 Rules:-
 
 -First one to reach 100 wins.
