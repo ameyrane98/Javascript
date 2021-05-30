@@ -170,3 +170,62 @@ main {
 .hidden {
   display: none;
 }
+
+@media all and (max-width: 600px) {
+  main {
+    position: relative;
+    width: 50rem;
+    height: 40rem;
+  }
+
+  body {
+    height: 100vh;
+    color: #333;
+  }
+
+  .player {
+    padding: 2rem;
+  }
+  .name {
+    /* position: relative; */
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    font-weight: 100;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  .btn::first-letter {
+    font-size: 0rem;
+    display: inline-block;
+    margin-right: 0rem;
+  }
+
+  .btn--new {
+    top: 2rem;
+  }
+  .btn--roll {
+    top: 27rem;
+  }
+  .btn--hold {
+    top: 33rem;
+  }
+
+  .dice {
+    top: 10rem;
+    height: 6rem;
+  }
+  h3 {
+    width: max-content;
+  }
+
+  /* .current {
+    width: 50%;
+    height: 20%;
+  } */
+}
