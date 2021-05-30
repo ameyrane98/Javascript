@@ -9,3 +9,9 @@ Rules:-
 -If user rolls a one, he loses the current score and turn.
 
 -User can hold the score and pass the turn
+
+
+<---------------------------------------------------------------------->
+
+
+link:-https://ameyrane98.github.io/Javascript/
