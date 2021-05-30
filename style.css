@@ -172,9 +172,19 @@ main {
 }
 
 @media all and (max-width: 600px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
   main {
     position: relative;
-    width: 50rem;
+    width: 40rem;
     height: 40rem;
   }
 
@@ -187,7 +197,7 @@ main {
     padding: 2rem;
   }
   .name {
-    /* position: relative; */
+    position: relative;
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -201,13 +211,13 @@ main {
     font-size: 1rem;
   }
   .btn::first-letter {
-    font-size: 0rem;
+    font-size: 1rem;
     display: inline-block;
     margin-right: 0rem;
   }
 
   .btn--new {
-    top: 2rem;
+    top: 1rem;
   }
   .btn--roll {
     top: 27rem;
@@ -224,8 +234,12 @@ main {
     width: max-content;
   }
 
-  /* .current {
-    width: 50%;
-    height: 20%;
-  } */
+  .current {
+    width: 60%;
+    height: 30%;
+    margin: 1em;
+  }
+  .current-label {
+    font-size: 1.2rem;
+  }
 }
