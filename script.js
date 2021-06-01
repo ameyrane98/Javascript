@@ -2,12 +2,12 @@
 //Player1
 const name1 = document.getElementById('name--0');
 const score1 = document.querySelector('#score--0');
-// const currentScore1 = document.querySelector('#current--0');
+const currentScore1 = document.querySelector('#current--0');
 
 // Player 2
 const name2 = document.getElementById('name--1');
 const score2 = document.getElementById('score--1');
-// const currentScore2 = document.querySelector('#current--1');
+const currentScore2 = document.querySelector('#current--1');
 
 //setting score to 0 in text
 score1.textContent = 0;
@@ -34,16 +34,25 @@ const disable = function (bool) {
 
 const init = function () {
   scores = [0, 0]; //array to store scores
+
   //current score
   currentScore = 0;
   activePlayer = 0; // this is done to switch between element current--0 and current--1
   //setting scores to zero
   score1.textContent = 0;
   score2.textContent = 0;
+  currentScore1.textContent = 0;
+  currentScore2.textContent = 0;
   disable(false);
+  document.querySelector('.player--0').classList.add('player--active');
+  document.querySelector('.btn--new').textContent = '🎰 New game ';
+  document.querySelector(`.player--1`).classList.remove('player--winner');
+  document.querySelector(`.player--0`).classList.remove('player--winner');
+  document.querySelector('.in--1').textContent = 'Your turn';
+  document.querySelector('.in--0').textContent = 'Your turn';
+  document.querySelector(`.in--0`).classList.remove('hidden');
   name1.textContent = prompt('Name of player1');
   name2.textContent = prompt('Name of player2');
-  document.querySelector(`.in--0`).classList.remove('hidden');
 };
 
 //random dice show and switch player
@@ -83,22 +92,30 @@ const randomDice = function () {
   }
 };
 
+const playerWon = function () {
+  document.querySelector('.btn--new').textContent = '🔁 Reset game';
+  dice.classList.add('hidden');
+
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.add('player--winner');
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.remove('player--active');
+  disable(true); //disable btn--roll, btn--hold
+  document.querySelector(
+    `.in--${activePlayer}`
+  ).textContent = `🥂🥂 Congratulations!! You Won! 🥂🥂`;
+
+  document.querySelector('.btn--new').classList.add('.hidden');
+};
+
 const holdScore = function () {
   scores[`${activePlayer}`] += currentScore; // adding scores to the array
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[`${activePlayer}`];
   if (scores[`${activePlayer}`] >= 100) {
-    dice.classList.add('hidden');
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.add('player--winner');
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.remove('player--active');
-    disable(true); //disable btn--roll, btn--hold
-    document.querySelector(
-      `.in--${activePlayer}`
-    ).textContent = `🥂🥂 Congratulations!! You Won! 🥂🥂`;
+    playerWon();
   } else {
     switchPlayer();
   }

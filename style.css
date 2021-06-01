@@ -232,6 +232,7 @@ main {
   }
   h3 {
     width: max-content;
+    font-size: 1rem;
   }
 
   .current {
@@ -241,5 +242,8 @@ main {
   }
   .current-label {
     font-size: 1.2rem;
+  }
+  .player--winner {
+    width: 50%;
   }
 }
