@@ -10,3 +10,7 @@ Hello, Welcome to my first JS project. Here are some rules to play the pig game.
 -If user rolls a one, he loses the current score and turn.
 
 -User can hold the score and pass the turn
+
+<---------------------------------------------->
+
+Page link:- https://ameyrane98.github.io/Javascript/
